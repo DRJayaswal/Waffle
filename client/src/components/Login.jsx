@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({user,setUser}) => {
   const [isLogin, setLogin] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,12 +10,22 @@ const Login = () => {
 
   const onLogIn = (e) => {
     e.preventDefault();
-    // Login logic
+    setUser(true)
+    console.log({
+      username,
+      password,
+    });
   };
 
   const onSignUp = (e) => {
     e.preventDefault();
-    // Sign up logic
+    if(password !== confirmPassword) return alert("Confirm Password is not the same");
+    console.log({
+      username,
+      password,
+      confirmPassword,
+      avatar,
+    })
   };
 
   const changeOption = () => {
@@ -82,9 +92,9 @@ const Login = () => {
                 />
               )}
               <div className="avatar-bundle">
-                <label for="avatar" className="avatar-icon">
+                <label htmlFor="avatar" className="avatar-icon">
                 <svg
-                for="avatar"
+                  htmlFor="avatar"
                   className="avatar-icon-svg"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -101,6 +111,7 @@ const Login = () => {
                   type="file"
                   id="avatar"
                   onChange={handleAvatarChange}
+                  required={true}
                 />
               </div>
             </div>
@@ -153,7 +164,6 @@ const Login = () => {
               <h3>Or</h3>
               <button type="button" className="Llogin" onClick={changeOption}>
                 Log In
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
               </button>
             </div>
           </form>
