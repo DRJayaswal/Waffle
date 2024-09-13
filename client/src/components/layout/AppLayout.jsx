@@ -3,6 +3,7 @@ import "./AppLayout.css"
 import Header from "./Header";
 import Footer from "./Footer";
 import ChatList from "../specific/ChatList";
+import { chat } from "../constants/sampleData";
 
 const AppLayout = () => (WrappedComponents) => {
   return (props) => {
@@ -14,7 +15,7 @@ const AppLayout = () => (WrappedComponents) => {
 
         <div className="container">
           <div className="sidebar">
-            <ChatList chats={[1,2,3,4,5]} />
+            <ChatList chats={chat} />
           </div>
           <div className="content">
             <WrappedComponents {...props} />

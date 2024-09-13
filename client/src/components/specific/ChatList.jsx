@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stack } from '@mui/material'
+import ChatItem from '../../shared/ChatItem'
 
 const ChatList = ({
     w="100%",
@@ -17,7 +18,7 @@ const ChatList = ({
         {
             chats?.map((data,index)=>{
                 return (
-                    <div key={index}>{data}</div>
+                    <ChatItem  />
                 )
             })
         }
