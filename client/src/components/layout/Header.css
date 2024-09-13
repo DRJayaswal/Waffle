@@ -1,0 +1,44 @@
+
+body {
+  overflow-x: hidden;
+}
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .app-bar {
+    height: 4rem;
+    max-width: 100vw;
+  }
+  
+  .toolbar {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .title {
+      font-size: 2.11rem;
+      display: block;
+    }
+    .title-icon{
+    display: none;
+}
+.title-center{
+    flex-grow: 1;
+}
+
+
+  @media (max-width: 768px) {
+    .title {
+      display: none;
+    }
+    .title-icon{
+        display: block;
+    }
+  }

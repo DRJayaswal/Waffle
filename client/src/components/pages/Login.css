@@ -53,14 +53,15 @@
     padding: 0.75rem;
     border: 2px solid black;
     font-size: 1rem;
-    transition: all 0.3s ease-in-out;
     border-color: transparent;
-    background-color: rgb(246, 232, 198);
     border-radius: 30px;
+    opacity: 0.45;
+    background-color: white;
+    transition: all 0.4s ease-in-out;
   }
   
   .Linput:focus {
-    background-color: white;
+    opacity: 1;
     outline: none;
   }
   

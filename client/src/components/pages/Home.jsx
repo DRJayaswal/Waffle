@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Login from './Login'
+import AppLayout from '../layout/AppLayout'
 
 const Home = () => {
   return (
@@ -9,4 +9,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default AppLayout()(Home)
