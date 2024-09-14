@@ -3,10 +3,11 @@ import { Link as LinkComponent } from "react-router-dom";
 
 export const Link = styled(LinkComponent)`
 text-decoration:none;
-color: black;
+color: white;
 padding: 1rem;
+transition: all .3s ease-in-out;
 &:hover {
-background-color:#f0f0f0 ;
+color: rgb(9, 195, 133);
 }
 `
 ;

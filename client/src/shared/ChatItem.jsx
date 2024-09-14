@@ -9,42 +9,27 @@ const ChatItem = ({
   groupChat = false,
   sameSender,
   index = 0,
-  newMessageAlert,
+  newMessagesAlert,
   unreadCount = 0,
   handleClick,
   isOnline,
-  handleDeleteChatOpen,
+  handleDeleteChat,
 }) => {
   return (
-    <Link to={`/chats/${_id}`} onContextMenu={(e) => handleDeleteChatOpen(e,_id,groupChat)}>
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          alignItems: "center",
-          padding: "1rem",
-          backgroundColor: sameSender ? "black" : "unset",
-          color: sameSender ? "white" : "unset",
-          position: "relative",
-        }}
+    <Link
+    className="chat-item-section"
+    to={`/chats/${_id}`}
+    onContextMenu={(e) => handleDeleteChat(e, _id, groupChat)}>
+      <Stack
+        className={`chat-item ${sameSender ? 'same-sender' : ''}`}
       >
         <Stack>
           <Typography>{name}</Typography>
-          {newMessageAlert && <Typography>{newMessageAlert.count}</Typography>}
+          {newMessagesAlert && <Typography>{newMessagesAlert.count} New Messages</Typography>}
         </Stack>
 
-        {isOnline && <Box sx={{
-            position: "absolute",
-            top: "50%",
-            right: "1rem",
-            backgroundColor: "green",
-            color: "white",
-            borderRadius: "50%",
-            width: "10px",
-            height: "10px",
-            transform: "translateY(-50%)",
-        }} />}
-      </div>
+        {isOnline && <Box className="online-status" />}
+      </Stack>
     </Link>
   );
 };

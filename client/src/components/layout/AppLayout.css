@@ -51,6 +51,9 @@
     flex: 0 0 25%;
     display: none;
     color: white;
+    overflow-y: scroll;
+    scrollbar-width:thin;
+    scrollbar-color: transparent transparent !important;
   }
   
   .content {
@@ -81,4 +84,53 @@
     .extra {
       display: block;
     }
+  }
+  .chat-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    background-color: unset;
+    color: unset;
+    position: relative;
+    border-bottom: 1px solid rgb(9, 195, 133); /* Matches your other elements */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .chat-item.same-sender {
+    background-color: black;
+    color: white;
+  }
+  
+  .online-status {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    background-color: green;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .chat-item:hover {
+    background-color: rgba(9, 195, 133, 0.1); /* A light hover effect */
+  }
+  
+  @media (min-width: 768px) {
+    .chat-item {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .chat-item {
+      padding: 2rem;
+    }
+  }
+  .chat-item-section{
+    padding: 0 !important;
   }
